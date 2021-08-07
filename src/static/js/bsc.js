@@ -46,7 +46,7 @@ const main = async() => {
       ["Sashimi             ", `<a href="sashimi"       >Various</a>`,"SASHIMI          ","https://bsc.sashimi.cool"],
       ["Beefy               ", `<a href="beefy"         >Various</a>`,"BIFI             ","https://app.beefy.finance"],
       ["Toad Swap           ", `<a href="toad"          >Various</a>`,"TOAD             ","https://toad.farm"],
-      ["Toad Network           ", `<a href="toad"          >Various</a>`,"TOADNETWORK             ","https://toad.network"],
+      ["Toad Network           ", `<a href="toad_network"          >Various</a>`,"TOADNETWORK             ","https://toad.network"],
       ["Koala               ", `<a href="koala"         >Various</a>`,"LYPTUS           ","https://koaladefi.finance"],
       ["Yoda                ", `<a href="yoda"          >Various</a>`,"YODA             ","https://yodaswap.finance"],
       ["Taco                ", `<a href="taco"          >Various</a>`,"TACO             ","https://taco.finance"],
