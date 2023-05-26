@@ -5,28 +5,33 @@
 /** Directories available as aliases
  * all the paths within Dir in globals.js
  */
-import $ from "jquery";
-import { ethers } from "ethers";
-import * as ethcall from "ethcall";
+import $ from "jquery"
+import {ethers} from "ethers"
+import * as ethcall from "ethcall"
+import lodash from "lodash"
+import {matchSorter} from "match-sorter"
 
-//import dompurify from 'dompurify'
+//import dompurify from "dompurify"
 
-import 'picturefill'
-import 'utils/errors'
-import 'utils/validation'
-import 'utils/quick';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-import Web3Modal from "web3modal";
+import "picturefill"
+import "utils/errors"
+import "utils/validation"
+import "utils/quick"
+import "core-js/stable"
+import "regenerator-runtime/runtime"
+import WalletConnectProvider from "@walletconnect/web3-provider"
+import Web3Modal from "web3modal"
 
-window.$ = $;
-window.ethers = ethers;
-window.ethcall = ethcall;
-window.asciichart = require("asciichart");
-window.AsciiTable = require("./ascii-table");
-window.Diff = require("diff");
-window.ETHEREUM_NODE_URL = 'aHR0cHM6Ly9tYWlubmV0LmluZnVyYS5pby92My9hNmYzNmI4OWM0OGM0ZmE4YjE0NjYwNWY2ZDdhNWI2Zg==';
+window.$ = $
+window.ethers = ethers
+window.ethcall = ethcall
+window.matchSorter = matchSorter
+window.asciichart = require("asciichart")
+window.AsciiTable = require("./ascii-table")
+window.lodash = lodash
+window.Diff = require("diff")
+window.ETHEREUM_NODE_URL = "aHR0cHM6Ly9tYWlubmV0LmluZnVyYS5pby92My9hNmYzNmI4OWM0OGM0ZmE4YjE0NjYwNWY2ZDdhNWI2Zg=="
+
 window.NETWORKS = {
   ETHEREUM: {
     "chainId": '0x1',
@@ -44,6 +49,321 @@ window.NETWORKS = {
     ],
     "blockExplorerUrls": [
       "https://etherscan.io"
+    ]
+  },
+  ARBITRUM: {
+    "chainId": "0xa4b1",
+    "chainName": "Arbitrum Mainnet",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://arb1.arbitrum.io/rpc"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.arbitrum.io"
+    ]
+  },
+  ARBITRUM_NOVA: {
+    "chainId": "0xA4BA",
+    "chainName": "Arbitrum Nova",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://nova.arbitrum.io/rpc"
+    ],
+    "blockExplorerUrls": [
+      "https://nova-explorer.arbitrum.io"
+    ]
+  },
+  ASTAR: {
+    "chainId": "0x250",
+    "chainName": "Astar Network",
+    "nativeCurrency": {
+      "name": "Astar",
+      "symbol": "ASTR",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://astar.api.onfinality.io/public"
+    ],
+    "blockExplorerUrls": [
+      "https://blockscout.com/astar/"
+    ]
+  },
+  KAVA: {
+    "chainId": "0x8AE",
+    "chainName": "Kava Network",
+    "nativeCurrency": {
+      "name": "Kava",
+      "symbol": "KAVA",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://evm.kava.io"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.kava.io"
+    ]
+  },
+  KLAYTN: {
+    "chainId": "0x2019",
+    "chainName": "Klaytn Mainnet Cypress",
+    "nativeCurrency": {
+      "name": "Klaytn",
+      "symbol": "KLAY",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://public-node-api.klaytnapi.com/v1/cypress"
+    ],
+    "blockExplorerUrls": [
+      "https://scope.klaytn.com"
+    ]
+  },
+  DOGE: {
+    "chainId": "0x7D0",
+    "chainName": "DogeChain",
+    "nativeCurrency": {
+      "name": "wDOGE",
+      "symbol": "wDOGE",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc01-sg.dogechain.dog"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.dogechain.dog"
+    ]
+  },
+  FX: {
+    "chainId": "0x212",
+    "chainName": "FX Mainnet",
+    "nativeCurrency": {
+      "name": "Function X",
+      "symbol": "FX",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://fx-json-web3.functionx.io:8545"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.starscan.io"
+    ]
+  },
+  CANTO: {
+    "chainId": "0x1E14",
+    "chainName": "CANTO",
+    "nativeCurrency": {
+      "name": "CANTO",
+      "symbol": "CANTO",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnode.plexnode.org:8545"
+    ],
+    "blockExplorerUrls": [
+      "https://evm.explorer.canto.io"
+    ]
+  },
+  CORE: {
+    "chainId": "0x45C",
+    "chainName": "Core Blockchain Mainnet",
+    "nativeCurrency": {
+      "name": "CORE",
+      "symbol": "CORE",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.coredao.org"
+    ],
+    "blockExplorerUrls": [
+      "https://scan.coredao.org"
+    ]
+  },
+  MILKOMEDA: {
+    "chainId": "0x7D1",
+    "chainName": "Milkomeda C1 Mainnet",
+    "nativeCurrency": {
+      "name": "Mada",
+      "symbol": "mADA",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc-mainnet-cardano-evm.c1.milkomeda.com"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer-mainnet-cardano-evm.c1.milkomeda.com"
+    ]
+  },
+  EVMOS: {
+    "chainId": "0x2329",
+    "chainName": "EVMOS",
+    "nativeCurrency": {
+      "name": "Evmos",
+      "symbol": "EVMOS",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://evmos-rpc2.binary.host"
+    ],
+    "blockExplorerUrls": [
+      "https://evm.evmos.org"
+    ]
+  },
+  ZKSYNC_ERA: {
+    "chainId": "0x144",
+    "chainName": "zkSync Era Mainnet",
+    "nativeCurrency": {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.era.zksync.io"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.zksync.io"
+    ]
+  },
+  ZKEVM: {
+    "chainId": "0x44D",
+    "chainName": "Polygon zkEVM",
+    "nativeCurrency": {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://zkevm-rpc.com"
+    ],
+    "blockExplorerUrls": [
+      "https://zkevm.polygonscan.com"
+    ]
+  },
+  PULSE: {
+    "chainId": "0x171",
+    "chainName": "Pulse Chain",
+    "nativeCurrency": {
+      "name": "Pulse",
+      "symbol": "PLS",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.pulsechain.com"
+    ],
+    "blockExplorerUrls": [
+      "https://scan.pulsechain.com"
+    ]
+  },
+  HOO: {
+    "chainId": "0x46",
+    "chainName": "Hoo Smart Chain",
+    "nativeCurrency": {
+      "name": "Hoo",
+      "symbol": "HOO",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://http-mainnet.hoosmartchain.com"
+    ],
+    "blockExplorerUrls": [
+      "https://www.hooscan.com"
+    ]
+  },
+  MOONRIVER: {
+    "chainId": "0x505",
+    "chainName": "Moonriver",
+    "nativeCurrency": {
+      "name": "moonriver",
+      "symbol": "MOVR",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.moonriver.moonbeam.network"
+    ],
+    "blockExplorerUrls": [
+      "https://moonbeam.network/networks/moonriver/"
+    ]
+  },
+  MOONBEAM: {
+    "chainId": "0x504",
+    "chainName": "Moonbeam",
+    "nativeCurrency": {
+      "name": "moonbeam",
+      "symbol": "GLMR",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.api.moonbeam.network"
+    ],
+    "blockExplorerUrls": [
+      "https://moonscan.io/"
+    ]
+  },
+  ETHW: {
+    "chainId": "0x2711",
+    "chainName": "ETHW-mainnet",
+    "nativeCurrency": {
+      "name": "EthereumPoW",
+      "symbol": "ETHW",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.ethereumpow.org"
+    ],
+    "blockExplorerUrls": [
+      "https://mainnet.ethwscan.com"
+    ]
+  },
+  OPTIMISM: {
+    "chainId": "0xA",
+    "chainName": "Optimistic Ethereum",
+    "nativeCurrency": {
+      "name": "ethereum",
+      "symbol": "OETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.optimism.io/"
+    ],
+    "blockExplorerUrls": [
+      "https://optimistic.etherscan.io/"
+    ]
+  },
+  EMERALD: {
+    "chainId": "0xA516",
+    "chainName": "Emerald Paratime Mainnet",
+    "nativeCurrency": {
+      "name": "oasis-network",
+      "symbol": "ROSE",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://emerald.oasis.dev"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.emerald.oasis.dev"
+    ]
+  },
+  DFK: {
+    "chainId": "0xD2AF",
+    "chainName": "DFK Chain",
+    "nativeCurrency": {
+      "name": "defi-kingdoms",
+      "symbol": "JEWEL",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.dfkchain.com"
     ]
   },
   BINANCE_SMART_CHAIN: {
@@ -122,7 +442,7 @@ window.NETWORKS = {
       "https://backup-explorer.matic.network"
     ]
   },
-  XDAI: {
+  GNOSIS: {
     "chainId": "0x64",
     "chainName": "xDAI Chain",
     "nativeCurrency": {
@@ -172,6 +492,51 @@ window.NETWORKS = {
     ],
     "blockExplorerUrls": [
       "https://ftmscan.com"
+    ],
+  },
+  VELAS: {
+    "chainId": "0x6A",
+    "chainName": "Velas EVM",
+    "nativeCurrency": {
+      "name": "Velas",
+      "symbol": "VLX",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://evmexplorer.velas.com/rpc"
+    ],
+    "blockExplorerUrls": [
+      "https://evmexplorer.velas.com"
+    ],
+  },
+  AURORA: {
+    "chainId": "0x4E454152",
+    "chainName": "Aurora MainNet",
+    "nativeCurrency": {
+      "name": "aave-eth-v1",
+      "symbol": "aETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.aurora.dev"
+    ],
+    "blockExplorerUrls": [
+      "https://evmexplorer.velas.com"
+    ],
+  },
+  BOBA: {
+    "chainId": "0x120",
+    "chainName": "Boba Network",
+    "nativeCurrency": {
+      "name": "ethereum",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.boba.network/"
+    ],
+    "blockExplorerUrls": [
+      "https://blockexplorer.boba.network"
     ],
   },
   HARMONY_S0: {
@@ -249,6 +614,21 @@ window.NETWORKS = {
       "https://explorer.fuse.io"
     ]
   },
+  CRONOS: {
+    "chainId": "0x19",
+    "chainName": "Cronos Mainnet",
+    "nativeCurrency": {
+      "name": "CRO",
+      "symbol": "CRO",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.crodex.app/"
+    ],
+    "blockExplorerUrls": [
+      "https://cronos.crypto.org/explorer"
+    ]
+  },
   THUNDERCORE: {
     "chainId": "0x6c",
     "chainName": "ThunderCore",
@@ -298,6 +678,126 @@ window.NETWORKS = {
         "https://explorer.kcc.io/en"
     ],
   },
+  CELO: {
+    "chainId": "0xA4EC",
+    "chainName": "Celo Mainnet",
+    "nativeCurrency": {
+      "name": "celo",
+      "symbol": "CELO",
+      "decimals": 18
+    },
+    "rpcUrls": [
+        "https://forno.celo.org"
+    ],
+    "blockExplorerUrls": [
+        "https://explorer.celo.org"
+    ],
+  },
+  IOTEX: {
+    "chainId": "0x1251",
+    "chainName": "IoTeX Mainnet",
+    "nativeCurrency": {
+      "name": "IoTeX",
+      "symbol": "IOTX",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://babel-api.mainnet.iotex.io"
+    ],
+    "blockExplorerUrls": [
+      "https://iotexscan.io"
+    ],
+  },
+  SMARTBCH: {
+    "chainId": "0x2710",
+    "chainName": "Smart Bitcoin Cash Mainnet",
+    "nativeCurrency": {
+      "name": "Bitcoin Cash",
+      "symbol": "BCH",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://global.uat.cash"
+    ],
+    "blockExplorerUrls": [
+      "https://smartscan.cash"
+    ],
+  },
+  POLIS: {
+    "chainId": "0x518AF",
+    "chainName": "Polis Olympus Chain",
+    "nativeCurrency": {
+      "name": "Polis",
+      "symbol": "POLIS",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.polis.tech"
+    ],
+    "blockExplorerUrls": [
+      "https://explorer.polis.tech"
+    ],
+  },
+  METIS: {
+    "chainId": "0x440",
+    "chainName": "Metis Mainnet",
+    "nativeCurrency": {
+      "name": "Metis",
+      "symbol": "METIS",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://andromeda.metis.io/?owner=1088"
+    ],
+    "blockExplorerUrls": [
+      "https://andromeda-explorer.metis.io/"
+    ],
+  },
+  METER: {
+    "chainId": "0x52",
+    "chainName": "Meter Mainnet",
+    "nativeCurrency": {
+      "name": "Meter token",
+      "symbol": "MTR",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc.meter.io"
+    ],
+    "blockExplorerUrls": [
+      "https://scan.meter.io"
+    ],
+  },
+  TELOS: {
+    "chainId": "0x28",
+    "chainName": "Telos EVM Mainnet",
+    "nativeCurrency": {
+      "name": "Telos",
+      "symbol": "TLOS",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://mainnet.telos.net/evm"
+    ],
+    "blockExplorerUrls": [
+      "https://teloscan.io"
+    ],
+  },
+  FINDORA: {
+    "chainId": "0x868",
+    "chainName": "Findora EVM Mainnet",
+    "nativeCurrency": {
+      "name": "Findora",
+      "symbol": "FRA",
+      "decimals": 18
+    },
+    "rpcUrls": [
+      "https://rpc-mainnet.findora.org"
+    ],
+    "blockExplorerUrls": [
+      "https://evm.findorascan.io"
+    ],
+  },
 }
 
 const infuraId = atob(window.ETHEREUM_NODE_URL).split('/').pop()
@@ -315,10 +815,21 @@ const providerOptions = {
         100: "https://rpc.xdaichain.com",
         43114: "https://api.avax.network/ext/bc/C/rpc",
         250: "https://rpcapi.fantom.network",
+        42161: "https://arb1.arbitrum.io/rpc",
         1666600000: "https://api.harmony.one",
         1666600001: "https://s1.api.harmony.one",
         1666600002: "https://s2.api.harmony.one",
         1666600003: "https://s3.api.harmony.one",
+        122: "https://rpc.fuse.io",
+        66: "https://exchainrpc.okex.org",
+        4689: "https://babel-api.mainnet.iotex.io",
+        321: "https://rpc-mainnet.kcc.network",
+        10000: "https://global.uat.cash",
+        333999: "https://rpc.polis.tech",
+        25: "https://rpc.crodex.app/",
+        82: "https://rpc.meter.io",
+        40: "https://mainnet.telos.net/evm",
+        2152: "https://rpc-mainnet.findora.org"
       }
     }
   }

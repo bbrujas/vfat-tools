@@ -21,8 +21,11 @@ const main = async() => {
       [ "Kukaburra",  `<a href="kukaburra"    >Various</a>`,     "🐦KUKA",    "https://kukaburra.io/" ],
       [ "KuCow",      `<a href="kucow"        >Various</a>`,     "KUCOW",     "https://kucow.finance" ],
       [ "Kukafe",     `<a href="kukafe"       >Various</a>`,     "KAFE",      "https://kukafe.finance" ],
-      [ "Kuulaid",    `<a href="kuulaid"      >Various</a>`,     "KUUL",      "https://kuulaid.finance" ]
-    ]
+      [ "Kuulaid",    `<a href="kuulaid"      >Various</a>`,     "KUUL",      "https://kuulaid.finance" ],
+      [ "KsfSwap",    `<a href="ksfswap"      >Various</a>`,     "KSF",       "https://ksfswap.finance" ],
+      [ "Elk",        `<a href="elk"          >Various</a>`,     "ELK",       "https://elk.finance" ],
+      [ "MojitoSwap", `<a href="mojitoswap"   >Various</a>`,     "MJT",       "https://app.mojitoswap.finance" ]
+    ].reverse()
   }
 
   let table = new AsciiTable().fromJSON(tableData);
